@@ -13,6 +13,7 @@
         android:theme="@style/Theme.DjowdaTransport"
         tools:targetApi="31">
         <activity
+            android:theme="@style/Theme.App.Starting"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
