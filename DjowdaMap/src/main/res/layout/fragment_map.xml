@@ -1,19 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MapFragment">
 
 
-
-
-
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.djowda.djowdamap.MapTest.Custom2DScrollView
+        android:id="@+id/customScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gridRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.djowda.djowdamap.MapTest.Custom2DScrollView>
+
+    <FrameLayout
+        android:id="@+id/DjowdaChatHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/ComponentOverViewHostFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="5dp"
+        android:background="@android:color/transparent" />
+
+    <!-- Statistics Fragment Host (Top right) -->
+    <FrameLayout
+        android:id="@+id/StatisticsHostFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/transparent" />
+
+    <!-- Map Tools Fragment Host (Bottom right) -->
+    <FrameLayout
+        android:id="@+id/MapToolsHostFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="80dp"
+        android:background="@android:color/transparent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_exitMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/user_primary"
+        android:src="@drawable/baseline_exit_to_app_24" />
 
 </FrameLayout>

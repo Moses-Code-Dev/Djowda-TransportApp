@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.djowda.djowdamap"
+    namespace = "com.djowda.shared_res"
     compileSdk {
         version = release(36)
     }
@@ -20,7 +20,6 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
 
-
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -34,18 +33,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":Shared_res"))
-
     implementation(libs.appcompat)
     implementation(libs.material)
+
+
     testImplementation(libs.junit)
-    implementation(libs.glide)
-    implementation(libs.lifecycle.livedata)
-
-    annotationProcessor(libs.compiler)
-    implementation(libs.glide.transformations)
-
-
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

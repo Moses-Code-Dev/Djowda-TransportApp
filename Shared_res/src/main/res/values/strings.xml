@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Welcome :)</string>
+    <string name="note_this_is_an_alpha_version_some_features_may_be_unstable_or_incomplete">Note: This is an alpha version. Some features may be unstable or incomplete.</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="network">Network</string>
+    <string name="activities">Activities</string>
+    <string name="settings">Settings</string>
+</resources>

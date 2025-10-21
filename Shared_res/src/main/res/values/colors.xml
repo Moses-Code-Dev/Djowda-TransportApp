@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ========================================================= -->
+    <!-- 🌍 GLOBAL COLOR PALETTE (shared across all Djowda modules) -->
+    <!-- ========================================================= -->
+    <color name="dj_black">#FF000000</color>
+    <color name="dj_white">#FFFFFFFF</color>
+    <color name="dj_gray">#757575</color>
+
+    <color name="dj_primary">#CC5500</color> <!-- Metallic Copper -->
+    <color name="dj_secondary">#333333</color> <!-- Deep Charcoal -->
+    <color name="dj_background">#FFFFFF</color>
+    <color name="dj_surface">#F9F9F9</color>
+    <color name="dj_text_primary">#111111</color>
+    <color name="dj_text_secondary">#777777</color>
+    <color name="dj_success">#00B050</color>
+    <color name="dj_error">#D32F2F</color>
+    <color name="dj_warning">#FFA000</color>
+    <color name="dj_info">#0288D1</color>
+
+
+    <!-- ========================================================= -->
+    <!-- 🧭 USER APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="user_primary">#CC5500</color>
+    <color name="user_secondary">#CC5500</color>
+
+
+    <color name="user_background">#FFF7F0</color>
+    <color name="user_card">#FFFFFF</color>
+    <color name="user_navbar">#FAF3EB</color>
+
+    <!-- Buttons and states -->
+    <color name="user_button_primary">#CC5500</color>
+    <color name="user_button_text">#FFFFFF</color>
+    <color name="user_button_disabled">#E0E0E0</color>
+
+    <!-- Text and highlights -->
+    <color name="user_text_primary">#111111</color>
+    <color name="user_text_secondary">#666666</color>
+    <color name="user_highlight">#FFD580</color>
+
+    <!-- ========================================================= -->
+    <!-- 🏪 STORE APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="store_primary">#E53935</color> <!-- Deep Red from image -->
+    <color name="store_secondary">#EF5350</color> <!-- Lighter Red from image -->
+
+
+    <!-- ========================================================= -->
+    <!-- 🧰 STORE ADMIN APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="store_admin_primary">#673AB7</color> <!-- Deep Purple from image -->
+    <color name="store_admin_secondary">#7E57C2</color> <!-- Lighter Purple from image -->
+
+
+    <!-- ========================================================= -->
+    <!-- 🌾 FARMER APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="farmer_primary">#795548</color> <!-- Brown from image -->
+    <color name="farmer_secondary">#A1887F</color> <!-- Lighter Brown from image -->
+
+
+    <!-- ========================================================= -->
+    <!-- 🚚 DELIVERY APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="delivery_primary">#FFB300</color> <!-- Amber from image -->
+    <color name="delivery_secondary">#FFCA28</color> <!-- Lighter Amber from image -->
+
+
+    <!-- ========================================================= -->
+    <!-- 🏭 FACTORY APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="factory_primary">#757575</color> <!-- Gray from image -->
+    <color name="factory_secondary">#9E9E9E</color> <!-- Lighter Gray from image -->
+
+
+    <!-- ========================================================= -->
+    <!-- 🧱 WHOLESALER APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="wholesaler_primary">#FFB300</color> <!-- Amber from image (same as delivery) -->
+    <color name="wholesaler_secondary">#FFCA28
+    </color> <!-- Lighter Amber from image (same as delivery) -->
+
+
+    <!-- ========================================================= -->
+    <!-- 🍽️ RESTAURANT APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="restaurant_primary">#4CAF50</color> <!-- Green from image -->
+    <color name="restaurant_secondary">#81C784</color> <!-- Lighter Green from image -->
+
+
+    <!-- ========================================================= -->
+    <!-- 🌱 SEED PROVIDER APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="seed_primary">#4CAF50</color> <!-- Green from image (same as restaurant) -->
+    <color name="seed_secondary">#81C784
+    </color> <!-- Lighter Green from image (same as restaurant) -->
+
+
+    <!-- ========================================================= -->
+    <!-- 🚜 TRANSPORT APP COLOR PALETTE -->
+    <!-- ========================================================= -->
+    <color name="transport_primary">#2196F3</color> <!-- Blue from image -->
+    <color name="transport_secondary">#64B5F6</color> <!-- Lighter Blue from image -->
+
+</resources>

@@ -1,0 +1,35 @@
+# fastlane/Fastfile
+
+# Disables analytics
+opt_out_usage
+
+default_platform(:android)
+
+platform :android do
+  desc "Increment version, build, and deploy to internal track"
+  lane :deploy_internal do
+
+    # 1. Increment the version code using the plugin
+    increment_version_code(
+      gradle_file_path: "./app/build.gradle.kts"
+    )
+
+    # 2. Build the app bundle
+    gradle(
+      task: "clean bundleRelease"
+    )
+
+    # 3. Upload to Play Store
+    upload_to_play_store(
+      track: 'internal',
+      aab: './app/build/outputs/bundle/release/app-release.aab',
+      json_key: '/tmp/play_store_key.json',
+      package_name: 'com.djowda.djowdaUser',
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      release_status: 'completed'  # Auto-publish to internal track
+    )
+
+  end
+end
