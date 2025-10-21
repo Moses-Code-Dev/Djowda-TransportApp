@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by the Djowda Project Team
+  ~ Copyright (c) 2017-2025 Djowda. All rights reserved.
+  ~
+  ~ This file is part of the Djowda Project.
+  ~
+  ~ Licensed under the Djowda Non-Commercial, Non-Profit License v1.0
+  ~
+  ~ Permissions:
+  ~ - You may use, modify, and share this file for non-commercial and non-profit purposes only.
+  ~ - Commercial use of this file, in any form, requires prior written permission
+  ~   from the Djowda Project maintainers.
+  ~
+  ~ Notes:
+  ~ - This project is community-driven and continuously evolving.
+  ~ - The Djowda Project reserves the right to relicense future versions.
+  ~
+  ~ Last Modified: 2025-09-04 23:18
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:width="@dimen/splash_screen_icon_size"
+        android:height="@dimen/splash_screen_icon_size"
+        android:drawable="@drawable/djowda_logo_02"
+        android:gravity="center" />
+
+</layer-list>

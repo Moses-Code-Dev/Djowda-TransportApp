@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ========================================================= -->
+    <!-- 🌍 GLOBAL COLOR ATTRIBUTES -->
+    <!-- ========================================================= -->
+    <attr name="colorPrimary" format="color" />
+    <attr name="colorSecondary" format="color" />
+    <attr name="colorBackground" format="color" />
+    <attr name="colorSurface" format="color" />
+    <attr name="colorNavbar" format="color" />
+
+    <attr name="buttonColorPrimary" format="color" />
+    <attr name="buttonColorText" format="color" />
+    <attr name="buttonColorDisabled" format="color" />
+
+    <attr name="textColorPrimary" format="color" />
+    <attr name="textColorSecondary" format="color" />
+
+    <!-- Djowda global tones -->
+    <attr name="colorActive" format="color" />   <!-- replaces direct primary -->
+    <attr name="colorInactive" format="color" /> <!-- replaces gray -->
+
+    <attr name="colorBlack" format="color" />
+    <attr name="colorWhite" format="color" />
+
+</resources>

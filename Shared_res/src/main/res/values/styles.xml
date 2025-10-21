@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.App.FullScreenDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+
+        <item name="android:windowBackground">?attr/colorWhite</item>
+
+        <item name="android:statusBarColor">@color/user_primary</item>
+    </style>
+
+    
+
+
+
+
+
+
+</resources>

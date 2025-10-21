@@ -1,0 +1,12 @@
+# These are the supported keys GitHub recognizes:
+github: [ ]            # GitHub Sponsors (not supported in your country yet)
+#patreon: yourPatreonID
+#open_collective: yourCollectiveID
+ko_fi: djowda
+liberapay: Djowda
+#issuehunt: yourIssueHuntID
+#otechie: yourOtechieID
+#lfx_crowdfunding: yourLFXProjectName
+
+# For any custom link (like Buy Me a Coffee, PayPal, etc.)
+#custom: ["https://www.buymeacoffee.com/yourname", "https://paypal.me/yourname"]

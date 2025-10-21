@@ -1,0 +1,9 @@
+https://github.com/Moses-Code-Dev/Djowda-StoreApp.git
+https://github.com/Moses-Code-Dev/Djowda-DeliveryApp.git
+https://github.com/Moses-Code-Dev/Djowda-AdminApp.git
+https://github.com/Moses-Code-Dev/Djowda-TransportApp.git
+https://github.com/Moses-Code-Dev/Djowda-RestaurantsApp.git
+https://github.com/Moses-Code-Dev/Djowda-FactoryApp.git
+https://github.com/Moses-Code-Dev/Djowda-WholesalerApp.git
+https://github.com/Moses-Code-Dev/Djowda-FarmerApp.git
+https://github.com/Moses-Code-Dev/Djowda-SeedProviderApp.git
