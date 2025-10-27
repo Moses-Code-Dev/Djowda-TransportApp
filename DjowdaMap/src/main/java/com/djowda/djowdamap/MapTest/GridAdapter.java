@@ -10,10 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.djowda.djowdamap.MapTest.Utils.TileMap;
 import com.djowda.djowdamap.R;
 
-public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder>{
+public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder> {
     private final Context context;
     private final CellData cellData;
     private final int centerPosition;
@@ -31,42 +32,67 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder
 
         View view = LayoutInflater.from(context).inflate(R.layout.tile_item, parent, false);
 
-        return new GridViewHolder(view);
+        return new GridViewHolder(view, mItemClickListener, cellData);
     }
 
     @Override
     public void onBindViewHolder(@NonNull GridViewHolder holder, int position) {
 
-//        if (position == centerPosition) {
-//            holder.imageView.setImageResource(R.drawable.djowda_logo_02);
-//        } else if (cellData.hasData(position)) {
-//            holder.imageView.setImageResource(R.drawable.tile_test3);
-//        } else {
-//            holder.imageView.setImageResource(R.drawable.tile_test);
-//        }
-
         if (position == centerPosition) {
-            Glide.with(holder.imageView.getContext())
-                    .load(R.drawable.djowda_logo_02)
-                    .into(holder.imageView);
+            holder.imageView.setImageResource(R.drawable.djowda_logo_02);
         } else if (cellData.hasData(position)) {
-            Glide.with(holder.imageView.getContext())
-                    .load(R.drawable.tile_test3)
-                    .into(holder.imageView);
+            holder.imageView.setImageResource(R.drawable.tile_test3);
         } else {
-            Glide.with(holder.imageView.getContext())
-                    .load(R.drawable.tile_test)
-//                    .load(R.drawable.tile_test3)
-                    .into(holder.imageView);
+            holder.imageView.setImageResource(R.drawable.tile_test);
         }
 
+//        if (position == centerPosition) {
+//            Glide.with(holder.imageView.getContext())
+//                    .load(R.drawable.djowda_logo_02)
+//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                    .into(holder.imageView);
+//        } else if (cellData.hasData(position)) {
+//            Glide.with(holder.imageView.getContext())
+//                    .load(R.drawable.tile_test3)
+//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                    .into(holder.imageView);
+//        } else {
+//            Glide.with(holder.imageView.getContext())
+//                    .load(R.drawable.tile_test)
+////                    .load(R.drawable.tile_test3)
+//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                    .into(holder.imageView);
+//        }
 
-        holder.itemView.setOnClickListener(v -> {
-            if (mItemClickListener != null) {
-                long cellId = cellData.getCellIdForPosition(position);
-                mItemClickListener.onItemClick(v, position, cellId);
-            }
-        });
+
+//        holder.itemView.setOnClickListener(v -> {
+//            if (mItemClickListener != null) {
+//                long cellId = cellData.getCellIdForPosition(position);
+//                mItemClickListener.onItemClick(v, position, cellId);
+//            }
+//        });
+    }
+
+    public class GridViewHolder extends RecyclerView.ViewHolder {
+        final ImageView imageView;
+
+        GridViewHolder(@NonNull View itemView, final ItemClickListener listener, final CellData cellData) {
+            super(itemView);
+            imageView = itemView.findViewById(R.id.tileImageView);
+
+
+            // --- SET THE LISTENER HERE, ONCE ---
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    int position = getBindingAdapterPosition(); // Get current position
+                    if (position != RecyclerView.NO_POSITION) {
+                        long cellId = cellData.getCellIdForPosition(position);
+                        listener.onItemClick(v, position, cellId);
+                    }
+                }
+            });
+
+        }
     }
 
     @Override
@@ -107,14 +133,6 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder
         return cellData.getDataCellCount();
     }
 
-    public class GridViewHolder extends RecyclerView.ViewHolder {
-        final ImageView imageView;
-
-        GridViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.tileImageView);
-        }
-    }
 
     public interface ItemClickListener {
         void onItemClick(View view, int position, long cellId);

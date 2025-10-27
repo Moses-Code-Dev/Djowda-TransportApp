@@ -1,9 +1,12 @@
 package com.djowda.djowdamap;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -11,9 +14,12 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.djowda.djowdamap.MapTest.Bubbles.ChatFragment;
@@ -25,7 +31,7 @@ import com.djowda.djowdamap.MapTest.GridAdapter;
 import com.djowda.djowdamap.MapTest.Utils.TileMap;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MapFragment extends DialogFragment implements GridAdapter.ItemClickListener{
+public class MapFragment extends DialogFragment implements GridAdapter.ItemClickListener {
 
     private RecyclerView recyclerView;
     private Custom2DScrollView scrollView;
@@ -36,12 +42,41 @@ public class MapFragment extends DialogFragment implements GridAdapter.ItemClick
         // Required empty public constructor
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        Dialog dialog = getDialog();
+        if (dialog != null) {
+            int width = ViewGroup.LayoutParams.MATCH_PARENT;
+            int height = ViewGroup.LayoutParams.MATCH_PARENT;
 
+            // This makes the dialog full-screen
+            dialog.getWindow().setLayout(width, height);
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+            // Change status bar color
+            Window window = dialog.getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+            // Resolve colorPrimary attribute to actual color
+            TypedValue typedValue = new TypedValue();
+            requireContext().getTheme().resolveAttribute(
+                    com.djowda.shared_res.R.attr.colorPrimary, typedValue, true
+            );
+            @ColorInt int color = typedValue.data;
+
+            window.setStatusBarColor(color);
+
+
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NORMAL, com.djowda.shared_res.R.style.Theme_App_FullScreenDialog);
+
+
     }
 
     @Override
@@ -75,18 +110,43 @@ public class MapFragment extends DialogFragment implements GridAdapter.ItemClick
     }
 
     private void setupRecyclerView() {
+//        GridLayoutManager layoutManager = new GridLayoutManager(requireContext(), TileMap.getMapSize());
+//        layoutManager.setOrientation(RecyclerView.VERTICAL);
+//
+//        recyclerView.setLayoutManager(layoutManager);
+//        adapter = new GridAdapter(requireContext());
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setItemViewCacheSize(50);
+////        recyclerView.setDrawingCacheEnabled(true);
+////        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+//        recyclerView.setAdapter(adapter);
+//
+//        adapter.setClickListener(this);
+//
+//        // Center the grid
+//        scrollView.post(() -> scrollView.centerOnGrid());
+
+
         GridLayoutManager layoutManager = new GridLayoutManager(requireContext(), TileMap.getMapSize());
         layoutManager.setOrientation(RecyclerView.VERTICAL);
 
         recyclerView.setLayoutManager(layoutManager);
+
+        // --- OPTIMIZATIONS ---
+        recyclerView.setHasFixedSize(true); // Set this BEFORE setAdapter
+        recyclerView.setItemViewCacheSize(20); // Lowered cache size (optional, test this)
+
+        // REMOVE THESE - They are deprecated and harm performance
+        // recyclerView.setDrawingCacheEnabled(true);
+        // recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+
         adapter = new GridAdapter(requireContext());
         recyclerView.setAdapter(adapter);
-        recyclerView.setHasFixedSize(true);
-
         adapter.setClickListener(this);
 
         // Center the grid
         scrollView.post(() -> scrollView.centerOnGrid());
+
     }
 
 
@@ -104,18 +164,6 @@ public class MapFragment extends DialogFragment implements GridAdapter.ItemClick
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     private void AttachBubbles() {

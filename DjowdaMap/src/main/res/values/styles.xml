@@ -6,10 +6,11 @@
 
         <item name="android:windowBackground">?attr/colorWhite</item>
 
-        <item name="android:statusBarColor">@color/user_primary</item>
+<!--        <item name="android:statusBarColor">@color/user_primary</item>-->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
     </style>
 
-    
+
 
 
 
