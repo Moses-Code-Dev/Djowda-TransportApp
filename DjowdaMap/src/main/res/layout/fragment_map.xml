@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|start"
         android:layout_margin="10dp"
-        android:backgroundTint="@color/user_primary"
+        android:backgroundTint="?attr/colorPrimary"
         android:src="@drawable/baseline_exit_to_app_24" />
 
 </FrameLayout>
