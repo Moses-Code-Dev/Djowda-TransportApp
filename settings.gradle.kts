@@ -9,6 +9,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+
     }
 }
 dependencyResolutionManagement {
@@ -16,9 +17,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
-rootProject.name = "Djowda Transport"
+rootProject.name = "Djowda User"
 include(":app")
- 
+include(":DjowdaMap")
+include(":Shared_res")

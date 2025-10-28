@@ -1,8 +1,33 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.DjowdaTransport" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Core -->
+
+
+        <item name="colorPrimary">@color/transport_primary</item>
+
+
+        <item name="colorSecondary">@color/transport_primary</item>
+
+
+        <item name="colorBackground">@color/user_background</item>
+        <item name="colorSurface">@color/user_card</item>
+        <item name="colorNavbar">@color/user_navbar</item>
+
+        <!-- Buttons -->
+        <item name="buttonColorPrimary">@color/user_button_primary</item>
+        <item name="buttonColorText">@color/user_button_text</item>
+        <item name="buttonColorDisabled">@color/user_button_disabled</item>
+
+        <!-- Text -->
+        <item name="textColorPrimary">@color/user_text_primary</item>
+        <item name="textColorSecondary">@color/user_text_secondary</item>
+
+        <!-- Global -->
+        <item name="colorActive">@color/dj_primary</item>
+        <item name="colorInactive">@color/dj_gray</item>
+        <item name="colorBlack">@color/dj_black</item>
+        <item name="colorWhite">@color/dj_white</item>
     </style>
 
     <style name="Theme.DjowdaTransport" parent="Base.Theme.DjowdaTransport" />
